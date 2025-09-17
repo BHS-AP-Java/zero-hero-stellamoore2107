@@ -22,19 +22,27 @@ class Main {
 
     String mystring = pushup("garlic");
     System.out.println(mystring);
-
+    System.out.println();
     Awesome steve = new Awesome("Steve");
     Awesome sue = new Awesome("Sue");
     Awesome linda = new Awesome("L");
     Awesome jhon = new Awesome("with a JH");
 
     System.out.println( steve.getName() );
+    steve.learnSomething("that is also awesome");
+    System.out.println(steve.getKnowledge());
+
+    jhon.learnSomething("different knowledge");
+    System.out.println( jhon.getKnowledge() );
 
     Awesome sarah = new Awesome("sarah");
     Awesome bethany = new Awesome("bethany");
 
     System.out.println( sarah.getName() );
     System.out.println( bethany.getName() );
+
+    new Simon();
+
   }
 
   public static String pushup(String food) {

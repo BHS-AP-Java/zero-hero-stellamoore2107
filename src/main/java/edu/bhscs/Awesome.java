@@ -3,6 +3,7 @@ package edu.bhscs;
 public class Awesome {
   //fields/properties: this is the stuff that awesome has
   String name;
+  String knowledge;
 
 
 
@@ -15,5 +16,13 @@ public class Awesome {
   // METHODS ARE ABILITIES OF THE CLASS/TYPE
   String getName(){
     return this.name;
+  }
+
+  void learnSomething(String knowledge){
+    this.knowledge = knowledge;
+  }
+
+  String getKnowledge(){
+    return this.knowledge;
   }
 }
