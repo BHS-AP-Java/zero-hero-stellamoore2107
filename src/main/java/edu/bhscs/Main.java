@@ -28,21 +28,21 @@ class Main {
     Awesome linda = new Awesome("L");
     Awesome jhon = new Awesome("with a JH");
 
-    System.out.println( steve.getName() );
+    System.out.println(steve.getName());
     steve.learnSomething("that is also awesome");
     System.out.println(steve.getKnowledge());
 
     jhon.learnSomething("different knowledge");
-    System.out.println( jhon.getKnowledge() );
+    System.out.println(jhon.getKnowledge());
 
     Awesome sarah = new Awesome("sarah");
     Awesome bethany = new Awesome("bethany");
 
-    System.out.println( sarah.getName() );
-    System.out.println( bethany.getName() );
+    System.out.println(sarah.getName());
+    System.out.println(bethany.getName());
 
-    new Simon();
-
+    Customer simon = new Customer("Simon");
+    Bakedgood cake = new Bakedgood("cake");
   }
 
   public static String pushup(String food) {
