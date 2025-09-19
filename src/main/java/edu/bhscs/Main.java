@@ -14,35 +14,20 @@ package edu.bhscs;
 
 class Main {
 
-  public static final float NAME_OF_THIS_FLOAT = 69.42f;
-
-  public static final char A = 'a';
-
   public static void main(String[] args) {
 
     String mystring = pushup("garlic");
     System.out.println(mystring);
     System.out.println();
-    Awesome steve = new Awesome("Steve");
-    Awesome sue = new Awesome("Sue");
-    Awesome linda = new Awesome("L");
-    Awesome jhon = new Awesome("with a JH");
 
-    System.out.println(steve.getName());
-    steve.learnSomething("that is also awesome");
-    System.out.println(steve.getKnowledge());
-
-    jhon.learnSomething("different knowledge");
-    System.out.println(jhon.getKnowledge());
-
-    Awesome sarah = new Awesome("sarah");
-    Awesome bethany = new Awesome("bethany");
-
-    System.out.println(sarah.getName());
-    System.out.println(bethany.getName());
-
+    Bakery myBakery = new Bakery("My");
     Customer simon = new Customer("Simon");
-    Bakedgood cake = new Bakedgood("cake");
+
+    String theGoodStuff = "chocolate";
+    Cake chocholateCake = new Cake(theGoodStuff);
+
+    chocholateCake.eaten();
+    System.out.println("This cake weighs " + chocholateCake.getWeight() + " pounds");
   }
 
   public static String pushup(String food) {
