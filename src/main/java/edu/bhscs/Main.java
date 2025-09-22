@@ -16,15 +16,15 @@ class Main {
 
   public static void main(String[] args) {
 
-    String mystring = pushup("garlic");
-    System.out.println(mystring);
-    System.out.println();
-
     Bakery myBakery = new Bakery("My");
     Customer simon = new Customer("Simon");
+    Baker sillyBaker = new Baker();
+    sillyBaker.bakecake();
 
     String theGoodStuff = "chocolate";
     Cake chocholateCake = new Cake(theGoodStuff);
+
+    simon.purchase(chocholateCake);
 
     chocholateCake.eaten();
     System.out.println("This cake weighs " + chocholateCake.getWeight() + " pounds");
@@ -35,8 +35,3 @@ class Main {
   }
 }
 
-// What is strange about this program is that sometimes when char and int variables are
-// combined, instead of printing next to each other as expected, they add together to create a
-// larger number.
-// Another strange thing is that the char variables must use single quotes to declare the
-// variable instead of the usual double quotes used for strings.

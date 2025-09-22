@@ -1,12 +1,12 @@
 package edu.bhscs;
 
 public class Customer {
-  // Properties 
+  // Properties
   public Customer(String name) {
     System.out.println("Hey, my name is " + name);
   }
 
-  void purchase(String item) {
-    System.out.println("I just bough a " + item);
+  public void purchase(Cake cake) {
+    System.out.println("I just bought a cake made with " + item.ingredient);
   }
 }
