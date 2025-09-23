@@ -17,21 +17,16 @@ class Main {
   public static void main(String[] args) {
 
     Bakery myBakery = new Bakery("My");
-    Customer simon = new Customer("Simon");
-    Baker sillyBaker = new Baker();
-    sillyBaker.bakecake();
+    Customer simon = new Customer("Simon", 10);
+    Baker sillyBaker = new Baker("Whimsical Baker");
+    sillyBaker.bakecake("whimsy", 10);
 
     String theGoodStuff = "chocolate";
-    Cake chocholateCake = new Cake(theGoodStuff);
+    Cake chocolateCake = new Cake(theGoodStuff, 5, sillyBaker);
 
-    simon.purchase(chocholateCake);
+    simon.purchase(chocolateCake, simon);
 
-    chocholateCake.eaten();
-    System.out.println("This cake weighs " + chocholateCake.getWeight() + " pounds");
-  }
-
-  public static String pushup(String food) {
-    return "sweat " + food;
+    chocolateCake.eaten();
+    System.out.println("This cake weighs " + chocolateCake.getWeight() + " pounds");
   }
 }
-
