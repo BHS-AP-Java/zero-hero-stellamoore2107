@@ -6,6 +6,7 @@ public class Cake {
   int weight;
   Customer owner;
   int cost;
+  Baker baker;
 
   // I have to make a constructor
   public Cake(String chosenIngredient, int cost, Baker baker) {
@@ -13,6 +14,7 @@ public class Cake {
     System.out.println("Baking the cake with..." + ingredient);
     this.weight = 10;
     this.cost = cost;
+    this.baker = baker;
   }
 
   public void eaten() {

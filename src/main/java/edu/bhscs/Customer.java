@@ -4,6 +4,7 @@ public class Customer {
   // Properties
   String name;
   int money;
+
   public Customer(String chosenName, int givenMoney) {
     name = chosenName;
     money = givenMoney;
@@ -13,6 +14,16 @@ public class Customer {
   public void purchase(Cake cakeToPurchase, Customer buyer) {
     cakeToPurchase.owner = buyer;
     money = money - cakeToPurchase.cost;
-    System.out.println("I, " +  buyer.name + ", just bought a cake made with " + cakeToPurchase.ingredient + " that costed " + cakeToPurchase.cost + " dollars. I now have " + money + " dollars");
+    cakeToPurchase.baker.money += cakeToPurchase.cost;
+    System.out.println(
+        "I, "
+            + buyer.name
+            + ", just bought a cake made with "
+            + cakeToPurchase.ingredient
+            + " that costed "
+            + cakeToPurchase.cost
+            + " dollars. I now have "
+            + money
+            + " dollars");
   }
 }

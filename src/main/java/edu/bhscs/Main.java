@@ -19,14 +19,14 @@ class Main {
     Bakery myBakery = new Bakery("My");
     Customer simon = new Customer("Simon", 10);
     Baker sillyBaker = new Baker("Whimsical Baker");
-    sillyBaker.bakecake("whimsy", 10);
+    sillyBaker.bakecake("whimsy", 10, sillyBaker);
 
     String theGoodStuff = "chocolate";
     Cake chocolateCake = new Cake(theGoodStuff, 5, sillyBaker);
 
     simon.purchase(chocolateCake, simon);
+    sillyBaker.bakerStatus();
 
-    chocolateCake.eaten();
     System.out.println("This cake weighs " + chocolateCake.getWeight() + " pounds");
   }
 }
