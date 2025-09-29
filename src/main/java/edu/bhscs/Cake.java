@@ -7,21 +7,19 @@ public class Cake {
   Customer owner;
   int cost;
   Baker baker;
+  Bakesale bakesale;
 
   // I have to make a constructor
-  public Cake(String chosenIngredient, int cost, Baker baker) {
+  public Cake(String chosenIngredient, int cost, Baker baker, Bakesale bakesale) {
     this.ingredient = chosenIngredient;
-    System.out.println("Baking the cake with..." + ingredient);
+    this.baker = baker;
+    System.out.println(baker.name + " is baking a cake with " + ingredient);
     this.weight = 10;
     this.cost = cost;
-    this.baker = baker;
+    this.bakesale = bakesale;
   }
 
-  public void eaten() {
-    this.weight = this.weight - 2;
-  }
-
-  public int getWeight() {
-    return this.weight;
+  public void getWeight() {
+    System.out.println("The " + ingredient + " cake weights " + weight + " pounds");
   }
 }
