@@ -6,20 +6,24 @@ public class Customer {
   int money;
   String state;
   Cake cake;
+  double commission;
 
   public Customer(String chosenName, int givenMoney) {
     name = chosenName;
     money = givenMoney;
     state = "hungry";
-    System.out.println("Hey, my name is " + name + ", I am " + state + ", and I have " + money + " dollars");
+    System.out.println(
+        "Hey, my name is " + name + ", I am " + state + ", and I have " + money + " dollars");
   }
 
   public void purchase(Cake cakeToPurchase, Customer buyer) {
     cakeToPurchase.owner = buyer;
     money = money - cakeToPurchase.cost;
+    commission = cakeToPurchase.cost / 10;
     cake = cakeToPurchase;
-    cakeToPurchase.bakesale.money += cakeToPurchase.cost;
+    cakeToPurchase.bakesale.money += (cakeToPurchase.cost - commission);
     cakeToPurchase.baker.baked += 1;
+    cakeToPurchase.baker.money += commission;
     System.out.println(
         "I, "
             + buyer.name
@@ -32,16 +36,21 @@ public class Customer {
             + " dollars");
   }
 
-  public void eatCake(){
+  public void eatCake() {
     cake.weight -= 2;
     state = "full";
   }
 
-  public void statusCheck(){
-    System.out.println("My name is "
-    + name + ", I have "
-    + money + " dollars, I own a "
-    + cake.ingredient + " cake and I feel "
-    + state + ".");
+  public void statusCheck() {
+    System.out.println(
+        "My name is "
+            + name
+            + ", I have "
+            + money
+            + " dollars, I own a "
+            + cake.ingredient
+            + " cake and I feel "
+            + state
+            + ".");
   }
 }

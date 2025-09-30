@@ -4,14 +4,14 @@ public class Bakesale {
   // Constructor
   String name;
   Cake inventory;
-  int money;
+  double money;
 
   public Bakesale(String name) {
     this.name = name;
     System.out.println("Welcome to " + name + " bakesale");
   }
 
-  public void getMoney(){
+  public void getMoney() {
     System.out.println(name + " bakesale has made " + money + " dollars");
   }
 }
