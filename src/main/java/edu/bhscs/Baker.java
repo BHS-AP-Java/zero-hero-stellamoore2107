@@ -33,7 +33,8 @@ public class Baker {
             + " cakes.");
   }
 
-  public Cake bakecake(String chosenIngredient, int cost, Baker baker, Bakesale bakesale, Flour flour) {
+  public Cake bakecake(
+      String chosenIngredient, int cost, Baker baker, Bakesale bakesale, Flour flour) {
     this.experience += 1;
     return new Cake(chosenIngredient, cost, baker, bakesale, flour);
   }
