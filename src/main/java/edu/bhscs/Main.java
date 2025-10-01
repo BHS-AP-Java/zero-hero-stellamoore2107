@@ -5,7 +5,7 @@
 
 /*
  * DESCRIPTION:
- *  Requirements: A cake, a baker, a buyer, and a PTSA
+ *  Requirements: A cake, a baker, a buyer, and a bakesale
  *  Make cakes and have them sold
  * INPUT: I don't know what that means yet
  * OUTPUT: I don't know what that means yet either
@@ -18,18 +18,23 @@ class Main {
 
   public static void main(String[] args) {
 
-    /*
-     * Bakesale PTSABakesale = new Bakesale("the BHS PTSA"); Customer simon = new Customer("Simon", 10);
-     * Baker sillyBaker = new Baker("Whimsical Baker"); Flour wholeFlour; sillyBaker.bakecake("whimsy",
-     * 10, sillyBaker, PTSABakesale, wholeFlour);
-     *
-     * String theGoodStuff = "chocolate"; Cake chocolateCake = new Cake(theGoodStuff, 5, sillyBaker,
-     * PTSABakesale, wholeFlour);
-     *
-     * simon.purchase(chocolateCake, simon); sillyBaker.bakerStatus(); PTSABakesale.getMoney();
-     * simon.eatCake(); simon.statusCheck();
-     *
-     * chocolateCake.getWeight();
-     */
+      Bakesale PTSABakesale = new Bakesale("the BHS PTSA");
+      Customer simon = new Customer("Simon", 10);
+      Customer sarah = new Customer ("Sarah", 20);
+      Baker sillyBaker = new Baker("Whimsical Baker");
+      Flour wholeFlour = new Flour ("whole", 1, 5, PTSABakesale);
+
+      Cake chocolateCake = sillyBaker.bakecake("chocolate", 5, sillyBaker, PTSABakesale, wholeFlour);
+      Cookies chocolateChipCookies = sillyBaker.bakeCookies("chocolate chips", 5, wholeFlour, sillyBaker, PTSABakesale);
+
+      simon.purchaseCake(chocolateCake, simon);
+      sarah.purchaseCookies(chocolateChipCookies, sarah);
+      sillyBaker.bakerStatus();
+      PTSABakesale.getMoney();
+      simon.eatCake(); simon.statusCheck();
+      sarah.eatCookies();
+      sarah.statusCheck();
+      chocolateCake.getWeight();
+
   }
 }

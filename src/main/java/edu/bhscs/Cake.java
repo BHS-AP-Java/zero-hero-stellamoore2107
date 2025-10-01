@@ -23,7 +23,8 @@ public class Cake {
     this.quality = baker.experience + flour.quality;
   }
 
-  public void getWeight() {
-    System.out.println("The " + ingredient + " cake weights " + weight + " pounds");
+  // Methods
+  public int getWeight() {
+    return this.weight;
   }
 }
