@@ -37,12 +37,14 @@ public class Baker {
             + " cookies.");
   }
 
-  public Cake bakecake(String chosenIngredient, int cost, Baker baker, Bakesale bakesale, Flour flour) {
+  public Cake bakecake(
+      String chosenIngredient, int cost, Baker baker, Bakesale bakesale, Flour flour) {
     this.experience += 1;
     return new Cake(chosenIngredient, cost, baker, bakesale, flour);
   }
 
-  public Cookies bakeCookies(String ingredient, int batchAmount, Flour flour, Baker baker, Bakesale bakesale){
+  public Cookies bakeCookies(
+      String ingredient, int batchAmount, Flour flour, Baker baker, Bakesale bakesale) {
     this.experience += 1;
     this.cookiesBaked += batchAmount;
     return new Cookies(ingredient, batchAmount, flour, baker, bakesale);

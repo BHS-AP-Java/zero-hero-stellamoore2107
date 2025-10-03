@@ -14,27 +14,23 @@
 
 package edu.bhscs;
 
+import java.util.Scanner;
+
 class Main {
 
   public static void main(String[] args) {
 
-      Bakesale PTSABakesale = new Bakesale("the BHS PTSA");
-      Customer simon = new Customer("Simon", 10);
-      Customer sarah = new Customer ("Sarah", 20);
-      Baker sillyBaker = new Baker("Whimsical Baker");
-      Flour wholeFlour = new Flour ("whole", 1, 5, PTSABakesale);
+    Scanner s = new Scanner(System.in);
 
-      Cake chocolateCake = sillyBaker.bakecake("chocolate", 5, sillyBaker, PTSABakesale, wholeFlour);
-      Cookies chocolateChipCookies = sillyBaker.bakeCookies("chocolate chips", 5, wholeFlour, sillyBaker, PTSABakesale);
+    System.out.println("What can we do with a scanner?");
 
-      simon.purchaseCake(chocolateCake, simon);
-      sarah.purchaseCookies(chocolateChipCookies, sarah);
-      sillyBaker.bakerStatus();
-      PTSABakesale.getMoney();
-      simon.eatCake(); simon.statusCheck();
-      sarah.eatCookies();
-      sarah.statusCheck();
-      chocolateCake.getWeight();
+    System.out.println("What is your favorite color?");
+    String color = s.next();
+    System.out.println("Your favorite color is " + color);
+
+    System.out.println("I don't know, but I'm done now");
+
+    s.close();
 
   }
 }

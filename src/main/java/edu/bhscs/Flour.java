@@ -17,7 +17,16 @@ public class Flour {
     this.lbs = lbs;
     this.quality = 5;
     bakesale.money -= price;
-    System.out.println("The " + bakesale.name + " bakesale bought " + name + " flour for " + price + " dollars. They now have " + bakesale.money + " dollars");
+    System.out.println(
+        "The "
+            + bakesale.name
+            + " bakesale bought "
+            + name
+            + " flour for "
+            + price
+            + " dollars. They now have "
+            + bakesale.money
+            + " dollars");
   }
 
   // Methods

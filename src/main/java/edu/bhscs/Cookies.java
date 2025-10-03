@@ -13,7 +13,7 @@ public class Cookies {
   Customer owner;
 
   // Constructor
-  public Cookies(String ingredient, int batchAmount, Flour flour, Baker baker, Bakesale bakesale){
+  public Cookies(String ingredient, int batchAmount, Flour flour, Baker baker, Bakesale bakesale) {
     this.ingredient = ingredient;
     this.batchAmount = batchAmount;
     this.bakesale = bakesale;

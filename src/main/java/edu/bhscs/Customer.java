@@ -47,9 +47,16 @@ public class Customer {
     cookiesToPurchase.bakesale.money += (cookiesToPurchase.cost - commission);
     cookiesToPurchase.baker.cakesBaked += 1;
     cookiesToPurchase.baker.money += commission;
-    System.out
-        .println("I, " + buyer.name + ", just bought a batch of cookies made with " + cookiesToPurchase.ingredient
-            + " that costed " + cookiesToPurchase.cost + " dollars. I now have " + money + " dollars");
+    System.out.println(
+        "I, "
+            + buyer.name
+            + ", just bought a batch of cookies made with "
+            + cookiesToPurchase.ingredient
+            + " that costed "
+            + cookiesToPurchase.cost
+            + " dollars. I now have "
+            + money
+            + " dollars");
   }
 
   public void eatCake() {
@@ -57,18 +64,13 @@ public class Customer {
     feeling = "full";
   }
 
-  public void eatCookies(){
+  public void eatCookies() {
     cookies.batchAmount -= 2;
     feeling = "full";
   }
+
   public void statusCheck() {
     System.out.println(
-        "My name is "
-            + name
-            + ", I have "
-            + money
-            + " dollars, and I feel "
-            + feeling
-            + ".");
+        "My name is " + name + ", I have " + money + " dollars, and I feel " + feeling + ".");
   }
 }
