@@ -31,6 +31,5 @@ class Main {
     System.out.println("I don't know, but I'm done now");
 
     s.close();
-
   }
 }

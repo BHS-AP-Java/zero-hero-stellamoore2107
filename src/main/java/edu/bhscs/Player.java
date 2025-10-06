@@ -6,17 +6,16 @@ public class Player {
   Scanner s;
 
   // Constructor
-  public Player player(String name){
+  public Player player(String name) {
     this.name = name;
-    this.s = new Scanner(System.in); 
+    this.s = new Scanner(System.in);
   }
 
   // Methods
 
-  public void answerQuestions(){
+  public void answerQuestions() {
     System.out.println("What's your question? ");
     String question = this.s.next();
-    System.out.println( question + " is a dumb question.");
+    System.out.println(question + " is a dumb question.");
   }
-
 }
