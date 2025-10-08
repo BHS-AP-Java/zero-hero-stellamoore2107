@@ -11,21 +11,21 @@ public class Flour {
   int quality;
 
   // Constructor
-  public Flour(String name, int price, int lbs, Bakesale bakesale) {
+  public Flour(String name, int price, int lbs, Store store) {
     this.name = name;
     this.price = price;
     this.lbs = lbs;
     this.quality = 5;
-    bakesale.money -= price;
+    store.money -= price;
     System.out.println(
         "The "
-            + bakesale.name
+            + store.name
             + " bakesale bought "
             + name
             + " flour for "
             + price
             + " dollars. They now have "
-            + bakesale.money
+            + store.money
             + " dollars");
   }
 

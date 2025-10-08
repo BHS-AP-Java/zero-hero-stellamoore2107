@@ -2,25 +2,19 @@ package edu.bhscs;
 
 public class Cake {
   // Properties
-  String ingredient;
+  String kind;
   int weight;
   Customer owner;
   int cost;
   Baker baker;
-  Bakesale bakesale;
   Flour flour;
   int quality;
 
   // I have to make a constructor
-  public Cake(String chosenIngredient, int cost, Baker baker, Bakesale bakesale, Flour flour) {
-    this.ingredient = chosenIngredient;
-    this.baker = baker;
+  public Cake(String kind, Flour flour, int skill) {
+    this.kind = kind;
     this.flour = flour;
-    System.out.println(baker.name + " is baking a cake with " + ingredient);
     this.weight = 10;
-    this.cost = cost;
-    this.bakesale = bakesale;
-    this.quality = baker.experience + flour.quality;
   }
 
   // Methods

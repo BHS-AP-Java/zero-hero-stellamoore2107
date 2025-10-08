@@ -1,52 +1,44 @@
 package edu.bhscs;
 
 public class Baker {
-  // Fields/properties
+  // PROPERTIES AND FIELDS
+  Player p;
+  Flour f;
+  Store placeOfWork;
+  int cash;
+  int skill;
   String name;
-  double money;
-  int cakesBaked;
-  int cookiesBaked;
-  int experience;
 
-  // Constructor (something that makes an instance of the class)
-  public Baker(String name) {
-    this.name = name;
-    this.money = 0;
-    this.cakesBaked = 0;
-    System.out.println(
-        "My name is "
-            + name
-            + " the baker, I have "
-            + money
-            + " dollars and I have made "
-            + cakesBaked
-            + " cakes.");
+  // CONSTRUCTOR
+  Baker(Player p) {
+    this.p = p;
   }
 
-  // Methods
-  public void bakerStatus() {
-    System.out.println(
-        "My name is "
-            + name
-            + " the baker, I have "
-            + money
-            + " dollars, I have baked "
-            + cakesBaked
-            + " cakes and "
-            + cookiesBaked
-            + " cookies.");
+  // METHODS
+
+  public void learn(int amount){
+    this.skill += amount;
+  }
+  void takeOrder(int price, Customer c) {
+    cash += c.pay(price);
+    c.takeCake(bakeCake());
   }
 
-  public Cake bakecake(
-      String chosenIngredient, int cost, Baker baker, Bakesale bakesale, Flour flour) {
-    this.experience += 1;
-    return new Cake(chosenIngredient, cost, baker, bakesale, flour);
+  Cake bakeCake() {
+    String answer = this.p.giveAnswer("What kind of cake do you want? ");
+    this.skill++;
+    return new Cake(answer, this.f, this.skill);
   }
 
-  public Cookies bakeCookies(
-      String ingredient, int batchAmount, Flour flour, Baker baker, Bakesale bakesale) {
-    this.experience += 1;
-    this.cookiesBaked += batchAmount;
-    return new Cookies(ingredient, batchAmount, flour, baker, bakesale);
+  void takeJob(Store bakery) {
+    String doYouWantToWorkHere = this.p.giveAnswer("Do you want to work at " + bakery.name);
+    if (doYouWantToWorkHere.equals("y")) {
+      this.placeOfWork = bakery;
+      System.out.println(this.name + " now works at " + bakery.name);
+    }
+  }
+
+  void getName(){
+    this.name = this.p.giveAnswer("What is your name? ");
   }
 }

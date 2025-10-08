@@ -9,54 +9,25 @@ public class Customer {
   String feeling;
   Cake cake;
   Cookies cookies;
-  double commission;
+  String order;
 
-  public Customer(String chosenName, int givenMoney) {
+  public Customer(String chosenName, int givenMoney, String order) {
     name = chosenName;
     money = givenMoney;
+    this.order = order;
     feeling = "hungry";
     System.out.println(
-        "Hey, my name is " + name + ", I am " + feeling + ", and I have " + money + " dollars");
+        "Hey, my name is " + name + " the Customer, I would like a " + order + " cake.");
   }
 
-  public void purchaseCake(Cake cakeToPurchase, Customer buyer) {
-    cakeToPurchase.owner = buyer;
-    money = money - cakeToPurchase.cost;
-    commission = cakeToPurchase.cost / 5;
-    cake = cakeToPurchase;
-    cakeToPurchase.bakesale.money += (cakeToPurchase.cost - commission);
-    cakeToPurchase.baker.cakesBaked += 1;
-    cakeToPurchase.baker.money += commission;
-    System.out.println(
-        "I, "
-            + buyer.name
-            + ", just bought a cake made with "
-            + cakeToPurchase.ingredient
-            + " that costed "
-            + cakeToPurchase.cost
-            + " dollars. I now have "
-            + money
-            + " dollars");
+
+  public void takeCake(Cake cake){
+    this.cake = cake;
   }
 
-  public void purchaseCookies(Cookies cookiesToPurchase, Customer buyer) {
-    cookiesToPurchase.owner = buyer;
-    money = money - cookiesToPurchase.cost;
-    commission = cookiesToPurchase.cost / 10;
-    cookies = cookiesToPurchase;
-    cookiesToPurchase.bakesale.money += (cookiesToPurchase.cost - commission);
-    cookiesToPurchase.baker.cakesBaked += 1;
-    cookiesToPurchase.baker.money += commission;
-    System.out.println(
-        "I, "
-            + buyer.name
-            + ", just bought a batch of cookies made with "
-            + cookiesToPurchase.ingredient
-            + " that costed "
-            + cookiesToPurchase.cost
-            + " dollars. I now have "
-            + money
-            + " dollars");
+  public int pay(int price){
+    this.money -= price;
+    return price;
   }
 
   public void eatCake() {

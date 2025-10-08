@@ -1,13 +1,13 @@
 package edu.bhscs;
 
-public class Bakesale {
+public class Store {
   // Fields and properties
   String name;
   Cake inventory;
   double money;
 
   // Constructor
-  public Bakesale(String name) {
+  public Store(String name) {
     this.name = name;
     System.out.println("Welcome to " + name + " bakesale");
   }

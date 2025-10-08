@@ -14,22 +14,20 @@
 
 package edu.bhscs;
 
-import java.util.Scanner;
-
 class Main {
 
   public static void main(String[] args) {
+    Player p = new Player("my player");
+    Baker myBaker = new Baker(p);
+    Store myStore = new Store("Cool Store");
+    myBaker.getName();
+    myBaker.takeJob(myStore);
 
-    Scanner s = new Scanner(System.in);
+    Customer sarah = new Customer("Sarah", 20, "chocolate");
+    myBaker.bakeCake();
 
-    System.out.println("What can we do with a scanner?");
 
-    System.out.println("What is your favorite color?");
-    String color = s.next();
-    System.out.println("Your favorite color is " + color);
 
-    System.out.println("I don't know, but I'm done now");
 
-    s.close();
   }
 }
