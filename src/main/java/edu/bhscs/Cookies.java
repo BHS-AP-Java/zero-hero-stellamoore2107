@@ -11,7 +11,6 @@ public class Cookies {
   Baker baker;
   Store store;
 
-
   // Constructor
 
 }

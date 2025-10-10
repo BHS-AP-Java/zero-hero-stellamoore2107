@@ -17,15 +17,14 @@ public class Customer {
     this.order = order;
     feeling = "hungry";
     System.out.println(
-        "Hey, my name is " + name + " the Customer, I would like a " + order + " cake.");
+        "Hey, my name is " + name + " the Customer, I would like one " + order + " cake.");
   }
 
-
-  public void takeCake(Cake cake){
+  public void takeCake(Cake cake) {
     this.cake = cake;
   }
 
-  public int pay(int price){
+  public int pay(int price) {
     this.money -= price;
     return price;
   }

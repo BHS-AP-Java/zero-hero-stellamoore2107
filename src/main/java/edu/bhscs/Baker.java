@@ -1,5 +1,16 @@
 package edu.bhscs;
 
+// Stella Moore
+// P2
+// Zerohero
+// 9/15/25
+
+/*
+ * DESCRIPTION: Requirements: A cake, a baker, a buyer, and a bakesale Make cakes and have them sold
+ * INPUT: I don't know what that means yet OUTPUT: I don't know what that means yet either EDGE
+ * CASE: Everything is an edge case right now
+ */
+
 public class Baker {
   // PROPERTIES AND FIELDS
   Player p;
@@ -8,6 +19,7 @@ public class Baker {
   int cash;
   int skill;
   String name;
+  String[] orders;
 
   // CONSTRUCTOR
   Baker(Player p) {
@@ -16,16 +28,17 @@ public class Baker {
 
   // METHODS
 
-  public void learn(int amount){
+  public void learn(int amount) {
     this.skill += amount;
   }
+
   void takeOrder(int price, Customer c) {
     cash += c.pay(price);
     c.takeCake(bakeCake());
   }
 
   Cake bakeCake() {
-    String answer = this.p.giveAnswer("What kind of cake do you want? ");
+    String answer = this.p.giveAnswer("What kind of cake do you want to bake? ");
     this.skill++;
     return new Cake(answer, this.f, this.skill);
   }
@@ -38,7 +51,7 @@ public class Baker {
     }
   }
 
-  void getName(){
+  void getName() {
     this.name = this.p.giveAnswer("What is your name? ");
   }
 }

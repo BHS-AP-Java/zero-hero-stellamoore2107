@@ -17,17 +17,8 @@ package edu.bhscs;
 class Main {
 
   public static void main(String[] args) {
-    Player p = new Player("my player");
-    Baker myBaker = new Baker(p);
-    Store myStore = new Store("Cool Store");
-    myBaker.getName();
-    myBaker.takeJob(myStore);
 
-    Customer sarah = new Customer("Sarah", 20, "chocolate");
-    myBaker.bakeCake();
-
-
-
-
+    Burger myBurger = new Burger();
+    myBurger.draw();
   }
 }

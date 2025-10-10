@@ -15,9 +15,10 @@ public class Player {
   }
 
   // Methods
-  public void accomplish(int amount){
+  public void accomplish(int amount) {
     this.accomplishments += amount;
   }
+
   public void answerQuestions() {
     System.out.println("What's your question? ");
     String question = this.s.next();
