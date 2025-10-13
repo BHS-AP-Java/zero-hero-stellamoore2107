@@ -18,7 +18,7 @@ class Main {
 
   public static void main(String[] args) {
 
-    Burger myBurger = new Burger();
-    myBurger.draw();
+    Cake myCake = new Cake("vanilla");
+    myCake.draw(1, 1, 1, 1);
   }
 }

@@ -2,6 +2,9 @@ package edu.bhscs;
 
 public class Cake {
   // Properties
+  int layers;
+  int width;
+  String topping;
   String kind;
   int weight;
   Customer owner;
@@ -11,14 +14,34 @@ public class Cake {
   int quality;
 
   // I have to make a constructor
-  public Cake(String kind, Flour flour, int skill) {
-    this.kind = kind;
-    this.flour = flour;
-    this.weight = 10;
+  public Cake(String topping) {
+    this.topping = topping;
   }
 
   // Methods
-  public int getWeight() {
-    return this.weight;
+  public void draw(int x, int y, int z, int slope) {
+
+  }
+
+  public void printTop(int x){
+    // Assing topping shapes
+    String topper = "";
+    if (this.topping == "strawberry"){
+      topper = "<";
+    }
+    if (this.topping == "vanilla"){
+      topper = "^";
+    }
+    if (this.topping == "chocholate"){
+      topper = "/";
+    }
+
+    // Make top line
+    String toppingLine = "";
+    for(var i = 0; i < x + 1; i++){
+      toppingLine += topper;
+    }
+    System.out.println(toppingLine);
+
   }
 }

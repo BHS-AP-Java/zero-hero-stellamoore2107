@@ -21,25 +21,25 @@ public class Burger {
   int weight;
 
   // Constructor
-  public Burger(){
+  public Burger() {
     this.weight = 10;
   }
+
   // Methods
-  public void beEaten(){
+  public void beEaten() {
     this.weight -= 2;
   }
 
-  private static void breadGuts(int width){
+  private static void breadGuts(int width) {
     String guts = "";
-    for(int i = 0; i < width; i++){
+    for (int i = 0; i < width; i++) {
       guts += "=";
     }
-
   }
 
-  public void draw(){
-    for (int i = 0; i < 10; i++){
-      System.out.println(" //" + breadGuts(10) + " \\ ");
+  public void draw() {
+    for (int i = 0; i < 10; i++) {
+      System.out.println(" //" + breadGuts(10) + "  ");
     }
   }
 }
