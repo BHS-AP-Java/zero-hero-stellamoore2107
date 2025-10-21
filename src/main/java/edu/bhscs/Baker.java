@@ -20,6 +20,7 @@ public class Baker {
   int skill;
   String name;
   String[] orders;
+  String topping;
 
   // CONSTRUCTOR
   Baker(Player p) {
@@ -40,7 +41,7 @@ public class Baker {
   Cake bakeCake() {
     String answer = this.p.giveAnswer("What kind of cake do you want to bake? ");
     this.skill++;
-    return new Cake(answer, this.f, this.skill);
+    return new Cake(topping);
   }
 
   void takeJob(Store bakery) {
