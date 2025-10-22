@@ -17,11 +17,10 @@ package edu.bhscs;
 class Main {
 
   public static void main(String[] args) {
-    Player myPlayer = new Player("placeholder name");
-    // String chosenTopping = myPlayer.giveAnswer("What kind of topping would you like on your cake?
-    // ");
-    // System.out.println(chosenTopping);
-    Cake myCake = new Cake("strawberry");
-    myCake.draw(7, 4, 4, 3);
+    Player user = new Player("me");
+    String name = user.giveAnswer("What is your name? ");
+    String age = user.giveAnswer("How old are you? ");
+    Cake myCake = new Cake(name, age);
+    myCake.draw(6, 4, 4, 2);
   }
 }

@@ -35,13 +35,12 @@ public class Baker {
 
   void takeOrder(int price, Customer c) {
     cash += c.pay(price);
-    c.takeCake(bakeCake());
+
   }
 
-  Cake bakeCake() {
+  void bakeCake() {
     String answer = this.p.giveAnswer("What kind of cake do you want to bake? ");
     this.skill++;
-    return new Cake(topping);
   }
 
   void takeJob(Store bakery) {

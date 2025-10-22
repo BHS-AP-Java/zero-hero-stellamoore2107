@@ -25,10 +25,10 @@ public class Player {
     System.out.println(question + " is a dumb question.");
   }
 
+
   public String giveAnswer(String question) {
     System.out.println(question);
-    String answer = s.nextLine();
-    return answer;
+    return s.nextLine();
   }
   ;
 }
