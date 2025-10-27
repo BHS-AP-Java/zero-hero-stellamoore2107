@@ -25,7 +25,6 @@ public class Player {
     System.out.println(question + " is a dumb question.");
   }
 
-
   public String giveAnswer(String question) {
     System.out.println(question);
     return s.nextLine();

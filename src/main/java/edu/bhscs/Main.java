@@ -17,10 +17,13 @@ package edu.bhscs;
 class Main {
 
   public static void main(String[] args) {
-    Player user = new Player("me");
-    String name = user.giveAnswer("What is your name? ");
-    String age = user.giveAnswer("How old are you? ");
-    Cake myCake = new Cake(name, age);
-    myCake.draw(6, 4, 4, 2);
+    date10_27();
+  }
+
+  public static void date10_27(){
+    Baker bob = new Baker("bob");
+    Table t = new Table(3, 15);
+    Cake bDay = bob.bakes("5", "Suzie");
+    bDay.draw(t);
   }
 }

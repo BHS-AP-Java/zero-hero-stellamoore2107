@@ -13,12 +13,20 @@ public class Cake {
   String age;
 
   // I have to make a constructor
-  public Cake(String name, String age) {
+  public Cake(String age, String name) {
     this.name = name;
     this.age = age;
   }
 
   // Methods
+
+  public void draw(Table t){
+    this.draw();
+    t.draw();
+  }
+
+  public void draw(){}
+
   public void draw(int x, int y, int z, int slope) {
 
     this.layersToPrint = z;
@@ -41,10 +49,10 @@ public class Cake {
     }
   }
 
-  public void addSlant(int x, int y, int z, int slope){
+  public void addSlant(int x, int y, int z, int slope) {
     int shiftAmount = slope * this.layersToPrint;
-
   }
+
   public void printMiddle(int x, int y, int z, int slope) {
     String midline = "";
     int shiftAmount = (slope * z) - this.toplinesMade;
@@ -63,7 +71,7 @@ public class Cake {
     for (var i = 0; i < width + toplinesMade + slope; i++) {
       topline += topper;
     }
-    for (var i = 0; i < toplinesMade - 1; i++){
+    for (var i = 0; i < toplinesMade - 1; i++) {
       topline += "/";
     }
     return topline;

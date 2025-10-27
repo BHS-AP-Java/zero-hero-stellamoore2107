@@ -23,11 +23,19 @@ public class Baker {
   String topping;
 
   // CONSTRUCTOR
-  Baker(Player p) {
+  public Baker(String name){
+    this.name = name;
+  }
+
+  public Baker(Player p) {
     this.p = p;
   }
 
   // METHODS
+
+  public Cake bakes(String name, String age){
+    return new Cake(name, age);
+  }
 
   public void learn(int amount) {
     this.skill += amount;
@@ -35,7 +43,6 @@ public class Baker {
 
   void takeOrder(int price, Customer c) {
     cash += c.pay(price);
-
   }
 
   void bakeCake() {
