@@ -20,12 +20,12 @@ public class Cake {
 
   // Methods
 
-  public void draw(Table t){
+  public void draw(Table t) {
     this.draw();
     t.draw();
   }
 
-  public void draw(){}
+  public void draw() {}
 
   public void draw(int x, int y, int z, int slope) {
 

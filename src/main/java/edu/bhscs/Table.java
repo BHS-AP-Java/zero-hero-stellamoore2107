@@ -1,3 +1,5 @@
+// We are trying to understand the fencepost problem
+// and use that in our table drawing
 package edu.bhscs;
 
 public class Table {
@@ -6,29 +8,29 @@ public class Table {
   int width;
 
   // Constructor
-  public Table(int legs, int width){
+  public Table(int legs, int width) {
     this.legs = legs;
     this.width = width;
   }
 
   // Methods
-  public void draw(){
+  public void draw() {
     int eachWidth = this.width / this.legs;
-    String topline = "";
-    String legline = "#";
-    for (var i = 0; i < this.width; i++){
-      topline += "=";
+    int remainder = this.width % this.legs;
+    for (var i = 0; i < this.width; i++) {
+      System.out.print("=");
     }
-    for (var i = 0; i < legs; i++){
-      for (var j = 0; j < eachWidth; j++){
-        legline += " ";
+    System.out.println();
+    for (var i = 0;i < 4; i++){
+      System.out.println("#");
+      for (var j = 0; j < legs-1; j++){
+        for (var k = 0; k < eachWidth; k++){
+          System.out.print(" ");
+        }
+        System.out.print("#");
       }
-      legline += "#";
+      System.out.println();
     }
 
-    System.out.println(topline);
-    for (var i = 0; i < 5; i++){
-      System.out.println(legline);
-    }
   }
 }

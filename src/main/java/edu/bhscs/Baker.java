@@ -23,7 +23,7 @@ public class Baker {
   String topping;
 
   // CONSTRUCTOR
-  public Baker(String name){
+  public Baker(String name) {
     this.name = name;
   }
 
@@ -33,7 +33,7 @@ public class Baker {
 
   // METHODS
 
-  public Cake bakes(String name, String age){
+  public Cake bakes(String name, String age) {
     return new Cake(name, age);
   }
 
