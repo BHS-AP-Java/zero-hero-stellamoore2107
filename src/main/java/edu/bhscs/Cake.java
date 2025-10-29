@@ -21,17 +21,15 @@ public class Cake {
   // Methods
 
   public void draw(Table t) {
-    this.draw();
+    this.draw(7, 4, 4, 2);
     t.draw();
   }
-
-  public void draw() {}
 
   public void draw(int x, int y, int z, int slope) {
 
     this.layersToPrint = z;
     printTop(x, y, z, slope);
-    printMiddle(x, y, z, slope);
+    printMiddle(x, y, z, slope, "^");
 
     System.out.println("This cake is for " + this.name + " who is turning " + this.age);
   }
@@ -49,18 +47,21 @@ public class Cake {
     }
   }
 
-  public void addSlant(int x, int y, int z, int slope) {
-    int shiftAmount = slope * this.layersToPrint;
-  }
-
-  public void printMiddle(int x, int y, int z, int slope) {
-    String midline = "";
-    int shiftAmount = (slope * z) - this.toplinesMade;
+  public void printMiddle(int x, int y, int z, int slope, String topper) {
+    String midline = "|";
+    int toplineLength = makeTopLine(x, "^", slope, z).length();
     for (var i = 0; i < x; i++) {
       midline += "-";
     }
-    for (var j = 0; j < y; j++) {
-      System.out.println("|" + midline);
+    midline += "|";
+    int midlineLength = midline.length();
+    int difference = toplineLength - midlineLength;
+    for (int i = 0; i < difference + 1; i++){
+      midline += "/";
+    }
+    midline += "|";
+    for (int i = 0; i < y; i++){
+      System.out.println(midline);
     }
   }
 

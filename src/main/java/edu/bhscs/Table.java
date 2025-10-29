@@ -17,20 +17,23 @@ public class Table {
   public void draw() {
     int eachWidth = this.width / this.legs;
     int remainder = this.width % this.legs;
-    for (var i = 0; i < this.width; i++) {
-      System.out.print("=");
-    }
-    System.out.println();
-    for (var i = 0;i < 4; i++){
-      System.out.println("#");
-      for (var j = 0; j < legs-1; j++){
-        for (var k = 0; k < eachWidth; k++){
-          System.out.print(" ");
-        }
-        System.out.print("#");
-      }
-      System.out.println();
+    int difference = this.width - remainder;
+    String widthLine = "";
+    for (int i = 0; i < difference; i++){
+      widthLine += "-";
     }
 
+    String topline = widthLine.substring(0, difference);
+    String legline = "";
+    for (int i = 0; i < legs; i++){
+      legline += "!";
+      for (int j = 0; j < eachWidth; j++){
+        legline += " ";
+      }
+    }
+    System.out.println(topline);
+    for (int i = 0; i < 4; i++){
+      System.out.println(legline);
+    }
   }
 }
