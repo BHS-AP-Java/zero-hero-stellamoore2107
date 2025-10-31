@@ -15,24 +15,24 @@ public class Table {
 
   // Methods
   public void draw() {
-    int eachWidth = this.width / this.legs;
     int remainder = this.width % this.legs;
     int difference = this.width - remainder;
+    int eachWidth = difference / this.legs;
     String widthLine = "";
-    for (int i = 0; i < difference; i++){
+    for (int i = 0; i < difference; i++) {
       widthLine += "-";
     }
 
     String topline = widthLine.substring(0, difference);
     String legline = "";
-    for (int i = 0; i < legs; i++){
+    for (int i = 0; i < legs; i++) {
       legline += "!";
-      for (int j = 0; j < eachWidth; j++){
+      for (int j = 0; j < eachWidth; j++) {
         legline += " ";
       }
     }
     System.out.println(topline);
-    for (int i = 0; i < 4; i++){
+    for (int i = 0; i < 4; i++) {
       System.out.println(legline);
     }
   }

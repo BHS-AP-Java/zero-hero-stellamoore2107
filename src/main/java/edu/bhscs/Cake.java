@@ -11,6 +11,7 @@ public class Cake {
   int layersToPrint;
   String name;
   String age;
+  int finalWidth;
 
   // I have to make a constructor
   public Cake(String age, String name) {
@@ -56,11 +57,11 @@ public class Cake {
     midline += "|";
     int midlineLength = midline.length();
     int difference = toplineLength - midlineLength;
-    for (int i = 0; i < difference + 1; i++){
+    for (int i = 0; i < difference + 1; i++) {
       midline += "/";
     }
     midline += "|";
-    for (int i = 0; i < y; i++){
+    for (int i = 0; i < y; i++) {
       System.out.println(midline);
     }
   }
