@@ -20,6 +20,10 @@ public class Cake {
   }
 
   // Methods
+  public void findOffset(Table t){
+    int tableWidth = t.getWidth();
+    int cakeWidth = this.finalWidth;
+  }
 
   public void draw(Table t) {
     this.draw(7, 4, 4, 2);
@@ -64,6 +68,7 @@ public class Cake {
     for (int i = 0; i < y; i++) {
       System.out.println(midline);
     }
+    this.finalWidth = midline.length();
   }
 
   public String makeTopLine(int x, String topper, int slope, int z) {

@@ -22,7 +22,7 @@ class Main {
 
   public static void date10_27() {
     Baker bob = new Baker("bob");
-    Table t = new Table(4, 20);
+    Table t = new Table(4, 23);
     Cake bDay = bob.bakes("5", "Suzie");
     bDay.draw(t);
   }
