@@ -12,22 +12,31 @@ public class Cake {
   String name;
   String age;
   int finalWidth;
+  int cakeOffset;
+  int tableOffset;
 
   // I have to make a constructor
-  public Cake(String age, String name) {
-    this.name = name;
-    this.age = age;
+  public Cake() {
+
   }
 
   // Methods
-  public void findOffset(Table t){
-    int tableWidth = t.getWidth();
-    int cakeWidth = this.finalWidth;
+  public int findOffset(int tableWidth) {
+    int offset = (this.finalWidth - tableWidth) / 2;
+    if(offset >= 0){
+      this.cakeOffset  = offset;
+      this.tableOffset = 0;
+    }
+    else{
+      this.cakeOffset  = 0;
+      this.tableOffset = Math.abs(offset);
+    }
+    return this.tableOffset;
   }
 
   public void draw(Table t) {
     this.draw(7, 4, 4, 2);
-    t.draw();
+    t.draw(new Cake());
   }
 
   public void draw(int x, int y, int z, int slope) {
@@ -35,8 +44,6 @@ public class Cake {
     this.layersToPrint = z;
     printTop(x, y, z, slope);
     printMiddle(x, y, z, slope, "^");
-
-    System.out.println("This cake is for " + this.name + " who is turning " + this.age);
   }
 
   public void printTop(int x, int y, int z, int slope) {
@@ -53,7 +60,11 @@ public class Cake {
   }
 
   public void printMiddle(int x, int y, int z, int slope, String topper) {
-    String midline = "|";
+    String midline = "";
+    for (int i = 0; i < this.cakeOffset; i++){
+      midline += " ";
+    }
+    midline += "|";
     int toplineLength = makeTopLine(x, "^", slope, z).length();
     for (var i = 0; i < x; i++) {
       midline += "-";
@@ -75,6 +86,9 @@ public class Cake {
     int width = x - z;
     this.toplinesMade += 1;
     String topline = "";
+    for (int i = 0; i < this.cakeOffset; i++){
+      topline += " ";
+    }
     for (var i = 0; i < width + toplinesMade + slope; i++) {
       topline += topper;
     }

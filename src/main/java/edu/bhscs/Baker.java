@@ -14,7 +14,7 @@ package edu.bhscs;
 public class Baker {
   // PROPERTIES AND FIELDS
   Player p;
-  Flour f;
+
   Store placeOfWork;
   int cash;
   int skill;
@@ -33,8 +33,8 @@ public class Baker {
 
   // METHODS
 
-  public Cake bakes(String name, String age) {
-    return new Cake(name, age);
+  public Cake bakes() {
+    return new Cake();
   }
 
   public void learn(int amount) {

@@ -16,28 +16,33 @@ public class Table {
   }
 
   // Methods
-  public void draw(){
+  public void draw(Cake c) {
     int remainder = this.width % this.spaces;
     int filling = (this.width / this.spaces) - 1;
     this.width -= (remainder + 1);
-    for (int i = 0; i < this.width; i++){
+    int offset = c.findOffset(this.width);
+    for (int i = 0; i < offset; i++){
+      System.out.print(" ");
+    }
+    for (int i = 0; i < this.width; i++) {
       System.out.print("-");
     }
     System.out.println();
     String legline = "";
-    for (int i = 0; i < spaces - 1; i++){
-      for (var j = 0; j < filling; j++){
+    for (int i = 0; i < offset; i++)
+      {legline += " ";}
+    for (int i = 0; i < spaces - 1; i++) {
+      for (var j = 0; j < filling; j++) {
         legline += " ";
       }
       legline += "!";
     }
-    for (int i = 0; i < 4; i++){
+    for (int i = 0; i < 4; i++) {
       System.out.println(legline);
     }
   }
 
-  public int getWidth(){
+  public int getWidth() {
     return this.width;
   }
 }
-

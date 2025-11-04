@@ -8,7 +8,7 @@ public class Customer {
   int money;
   String feeling;
   Cake cake;
-  Cookies cookies;
+
   String order;
 
   public Customer(String chosenName, int givenMoney, String order) {
@@ -35,7 +35,6 @@ public class Customer {
   }
 
   public void eatCookies() {
-    cookies.batchAmount -= 2;
     feeling = "full";
   }
 
