@@ -20,8 +20,8 @@ public class Table {
     int remainder = this.width % this.spaces;
     int filling = (this.width / this.spaces) - 1;
     this.width -= (remainder + 1);
-    int offset = c.findOffset(this.width);
-    for (int i = 0; i < offset; i++){
+    
+    for (int i = 0; i < offset; i++) {
       System.out.print(" ");
     }
     for (int i = 0; i < this.width; i++) {
@@ -29,8 +29,9 @@ public class Table {
     }
     System.out.println();
     String legline = "";
-    for (int i = 0; i < offset; i++)
-      {legline += " ";}
+    for (int i = 0; i < offset; i++) {
+      legline += " ";
+    }
     for (int i = 0; i < spaces - 1; i++) {
       for (var j = 0; j < filling; j++) {
         legline += " ";
@@ -43,6 +44,6 @@ public class Table {
   }
 
   public int getWidth() {
-    return this.width;
+    return (this.width - ((this.width % this.spaces) + 1));
   }
 }

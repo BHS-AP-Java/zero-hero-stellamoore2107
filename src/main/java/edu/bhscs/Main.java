@@ -23,6 +23,7 @@ class Main {
   public static void date10_27() {
     Baker bob = new Baker("bob");
     Table t = new Table(4, 30);
+    t.setLeg("|?|");
     Cake bDay = bob.bakes();
     bDay.draw(t);
   }

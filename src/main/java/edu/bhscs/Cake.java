@@ -16,27 +16,26 @@ public class Cake {
   int tableOffset;
 
   // I have to make a constructor
-  public Cake() {
-
-  }
+  public Cake() {}
 
   // Methods
   public int findOffset(int tableWidth) {
     int offset = (this.finalWidth - tableWidth) / 2;
-    if(offset >= 0){
-      this.cakeOffset  = offset;
+    if (this.finalWidth > tableWidth) {
+      this.cakeOffset = offset;
       this.tableOffset = 0;
-    }
-    else{
-      this.cakeOffset  = 0;
+    } else {
+      this.cakeOffset = 0;
       this.tableOffset = Math.abs(offset);
     }
     return this.tableOffset;
   }
 
   public void draw(Table t) {
+    int tableWidth = t.getWidth();
+    findOffset(tableWidth);
     this.draw(7, 4, 4, 2);
-    t.draw(new Cake());
+    t.draw();
   }
 
   public void draw(int x, int y, int z, int slope) {
@@ -61,7 +60,7 @@ public class Cake {
 
   public void printMiddle(int x, int y, int z, int slope, String topper) {
     String midline = "";
-    for (int i = 0; i < this.cakeOffset; i++){
+    for (int i = 0; i < this.cakeOffset; i++) {
       midline += " ";
     }
     midline += "|";
@@ -86,7 +85,7 @@ public class Cake {
     int width = x - z;
     this.toplinesMade += 1;
     String topline = "";
-    for (int i = 0; i < this.cakeOffset; i++){
+    for (int i = 0; i < this.cakeOffset; i++) {
       topline += " ";
     }
     for (var i = 0; i < width + toplinesMade + slope; i++) {
@@ -106,5 +105,9 @@ public class Cake {
     shift += "/";
     this.layersToPrint -= 1;
     return shift;
+  }
+
+  public void getCakeWidth(){
+    this.finalWidth = 16;
   }
 }
