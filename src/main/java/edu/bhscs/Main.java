@@ -22,9 +22,8 @@ class Main {
 
   public static void date10_27() {
     Baker bob = new Baker("bob");
-    Table t = new Table(4, 30);
-    t.setLeg("|?|");
-    Cake bDay = bob.bakes();
+    Table t = new Table(4, 30, "||");
+    Cake bDay = bob.bakes("5", "Susie");
     bDay.draw(t);
   }
 }

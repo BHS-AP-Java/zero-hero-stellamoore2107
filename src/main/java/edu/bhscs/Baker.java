@@ -33,8 +33,8 @@ public class Baker {
 
   // METHODS
 
-  public Cake bakes() {
-    return new Cake();
+  public Cake bakes(String age, String name) {
+    return new Cake(age, name);
   }
 
   public void learn(int amount) {
