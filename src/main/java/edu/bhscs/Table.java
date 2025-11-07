@@ -2,7 +2,7 @@
 // and use that in our table drawing
 package edu.bhscs;
 
-public class Table {
+public class Table implements Offsetable {
   // Fields and Propertires
   int legs;
   int width;
