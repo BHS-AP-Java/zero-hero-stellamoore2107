@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "WhileLoop",
+      "request": "launch",
+      "mainClass": "edu.bhscs.WhileLoop",
+      "projectName": "ap-java-starter"
+    },
+    {
+      "type": "java",
       "name": "App",
       "request": "launch",
       "mainClass": "edu.bhscs.App",

@@ -1,6 +1,6 @@
 package edu.bhscs;
 
-public class Cake implements Offsetable{
+public class Cake {
   // Properties
   int layers;
   String topping;
@@ -62,7 +62,6 @@ public class Cake implements Offsetable{
     }
     String shift = "";
     this.toplinesMade = 0;
-
 
     for (var i = 0; i < z; i++) {
       System.out.println(
