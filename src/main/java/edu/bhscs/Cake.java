@@ -25,7 +25,7 @@ public class Cake {
 
   // Methods
   public int findOffset(int tableWidth) {
-    returnCakeWidth();
+    getCakeWidth();
     int offset = (this.finalWidth - tableWidth) / 2;
     if (this.finalWidth > tableWidth) {
       this.cakeOffset = 0;
@@ -121,13 +121,6 @@ public class Cake {
 
   public void getCakeWidth() {
     this.finalWidth = 16;
-
   }
 
-  public int returnCakeWidth(){
-    int shift = slope * z;
-    shift -= slope;
-    finalWidth = x + shift + 3;
-    return finalWidth;
-  }
 }

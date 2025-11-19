@@ -26,7 +26,7 @@ public class WhileLoop {
       countdown -= 1;
     }
     int count = 0;
-    while (count < 5){
+    while (count < 5) {
       count++;
       System.out.println(count);
     }
