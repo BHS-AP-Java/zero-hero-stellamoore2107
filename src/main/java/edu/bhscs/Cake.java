@@ -14,7 +14,8 @@ public class Cake {
   int cakeOffset;
   int tableOffset;
   int x;
-  int slashes;
+  int slope;
+  int z;
 
   // I have to make a constructor
   public Cake(String age, String name) {
@@ -24,7 +25,7 @@ public class Cake {
 
   // Methods
   public int findOffset(int tableWidth) {
-    getCakeWidth();
+    returnCakeWidth();
     int offset = (this.finalWidth - tableWidth) / 2;
     if (this.finalWidth > tableWidth) {
       this.cakeOffset = 0;
@@ -47,6 +48,8 @@ public class Cake {
   public void draw(int x, int y, int z, int slope) {
     this.x = x;
     this.layersToPrint = z;
+    this.slope = slope;
+    this.z = z;
     printTop(x, y, z, slope);
     printMiddle(x, y, z, slope, "^");
   }
@@ -82,7 +85,7 @@ public class Cake {
     midline += "|";
     int midlineLength = midline.length();
     int difference = toplineLength - midlineLength;
-    this.slashes = difference;
+
     for (int i = 0; i < difference + 1; i++) {
       midline += "/";
     }
@@ -118,5 +121,13 @@ public class Cake {
 
   public void getCakeWidth() {
     this.finalWidth = 16;
+
+  }
+
+  public int returnCakeWidth(){
+    int shift = slope * z;
+    shift -= slope;
+    finalWidth = x + shift + 3;
+    return finalWidth;
   }
 }

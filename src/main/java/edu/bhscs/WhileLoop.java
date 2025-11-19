@@ -5,10 +5,10 @@ public class WhileLoop {
     // Example
     boolean data = true;
     int counter = 0;
-    while (data){
+    while (data) {
       counter++;
       System.out.println(counter);
-      if (counter >= 5){
+      if (counter >= 5) {
         data = false;
       }
     }
@@ -16,14 +16,19 @@ public class WhileLoop {
     // Application
     boolean readyForLaunch = false;
     int countdown = 10;
-    while (!(readyForLaunch)){
-      if (countdown == 0){
+    while (!(readyForLaunch)) {
+      if (countdown == 0) {
         System.out.println("Take off!");
         readyForLaunch = true;
         break;
       }
       System.out.println(countdown);
       countdown -= 1;
+    }
+    int count = 0;
+    while (count < 5){
+      count++;
+      System.out.println(count);
     }
   }
 }
