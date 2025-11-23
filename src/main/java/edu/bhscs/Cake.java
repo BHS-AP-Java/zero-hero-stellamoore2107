@@ -122,5 +122,4 @@ public class Cake {
   public void getCakeWidth() {
     this.finalWidth = 16;
   }
-
 }
