@@ -16,6 +16,9 @@ public class Cake {
   int x;
   int slope;
   int z;
+  String middle;
+  int y;
+  int toplineLength;
 
   // I have to make a constructor
   public Cake(String age, String name) {
@@ -25,7 +28,7 @@ public class Cake {
 
   // Methods
   public int findOffset(int tableWidth) {
-    getCakeWidth();
+    makeMiddle(this.x, this.y, this.z, this.slope, "^");
     int offset = (this.finalWidth - tableWidth) / 2;
     if (this.finalWidth > tableWidth) {
       this.cakeOffset = 0;
@@ -50,8 +53,10 @@ public class Cake {
     this.layersToPrint = z;
     this.slope = slope;
     this.z = z;
+    this.y = y;
+    makeMiddle(x, y, z, slope, "^");
     printTop(x, y, z, slope);
-    printMiddle(x, y, z, slope, "^");
+    printMiddle();
   }
 
   public void printTop(int x, int y, int z, int slope) {
@@ -66,34 +71,42 @@ public class Cake {
     String shift = "";
     this.toplinesMade = 0;
 
+    String topline = shiftTopLine(z, slope, shift) + makeTopLine(x, topper, slope, z) + "|";
+    this.toplineLength = topline.length();
+    this.layersToPrint += 1;
     for (var i = 0; i < z; i++) {
       System.out.println(
           offsetShift + shiftTopLine(z, slope, shift) + makeTopLine(x, topper, slope, z) + "|");
     }
   }
 
-  public void printMiddle(int x, int y, int z, int slope, String topper) {
+  public void makeMiddle(int x, int y, int z, int slope, String topper) {
     String midline = "";
-    for (int i = 0; i < this.cakeOffset; i++) {
-      midline += " ";
-    }
     midline += "|";
-    int toplineLength = (makeTopLine(x, "^", slope, z).length()) + this.cakeOffset;
     for (var i = 0; i < x; i++) {
       midline += "-";
     }
     midline += "|";
     int midlineLength = midline.length();
-    int difference = toplineLength - midlineLength;
+    int difference = this.toplineLength - midlineLength;
 
     for (int i = 0; i < difference + 1; i++) {
       midline += "/";
     }
     midline += "|";
-    for (int i = 0; i < y; i++) {
+    this.finalWidth = midline.length();
+    this.middle = midline;
+  }
+
+  public void printMiddle() {
+    String midline = "";
+    for (int i = 0; i < this.cakeOffset; i++) {
+      midline += " ";
+    }
+    midline += this.middle;
+    for (int i = 0; i < this.y; i++) {
       System.out.println(midline);
     }
-    this.finalWidth = midline.length();
   }
 
   public String makeTopLine(int x, String topper, int slope, int z) {
@@ -117,9 +130,5 @@ public class Cake {
     shift += "/";
     this.layersToPrint -= 1;
     return shift;
-  }
-
-  public void getCakeWidth() {
-    this.finalWidth = 16;
   }
 }

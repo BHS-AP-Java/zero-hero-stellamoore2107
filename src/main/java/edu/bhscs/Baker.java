@@ -46,7 +46,7 @@ public class Baker {
   }
 
   void bakeCake() {
-    String answer = this.p.giveAnswer("What kind of cake do you want to bake? ");
+    // String answer = this.p.giveAnswer("What kind of cake do you want to bake? ");
     this.skill++;
   }
 
