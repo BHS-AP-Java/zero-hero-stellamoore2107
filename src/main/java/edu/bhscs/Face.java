@@ -2,17 +2,17 @@ package edu.bhscs;
 
 // Draws a simple face
 public class Face implements Offsetable {
-  void draw(){
+  void draw() {
     this.draw(null);
   }
 
-  void draw(Offsetable other){
+  void draw(Offsetable other) {
     System.out.println(" ^ ^ ");
     System.out.println("  |  ");
     System.out.println("\\___/");
   }
 
-  public int getWidth(){
+  public int getWidth() {
     return 5;
   }
 

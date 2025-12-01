@@ -19,6 +19,8 @@ public class Cake {
   String middle;
   int y;
   int toplineLength;
+  boolean offsetting;
+
 
   // I have to make a constructor
   public Cake(String age, String name) {
@@ -28,6 +30,7 @@ public class Cake {
 
   // Methods
   public int findOffset(int tableWidth) {
+    this.offsetting = true;
     makeMiddle(this.x, this.y, this.z, this.slope, "^");
     int offset = (this.finalWidth - tableWidth) / 2;
     if (this.finalWidth > tableWidth) {
@@ -87,9 +90,11 @@ public class Cake {
       midline += "-";
     }
     midline += "|";
+    makeTopLine(x, topper, slope, z);
+    this.toplinesMade -= 1;
     int midlineLength = midline.length();
     int difference = this.toplineLength - midlineLength;
-
+    System.out.println("The difference between the topline length and midline length is " + difference);
     for (int i = 0; i < difference + 1; i++) {
       midline += "/";
     }
